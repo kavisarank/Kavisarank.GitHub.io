@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="description" content="Kavisaran K — Mechanical Engineering student, Founder &amp; CEO of MechFlow Technology, SDG Hackathon Winner, MSME entrepreneur from Salem, Tamil Nadu."/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kavisaran K — Engineer · Founder · Innovator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#080c10;--bg2:#0d1219;--bg3:#121920;--surface:#141c25;--surface2:#1a2535;
+  --border:rgba(0,200,255,0.12);--border2:rgba(0,200,255,0.25);
+  --cyan:#00c8ff;--cyan2:#00e5ff;--amber:#ffb800;--amber2:#ffd000;
+  --white:#f0f4f8;--muted:#6b7a8d;--muted2:#8fa0b4;--text:#d8e4f0;
+  --fd:'Bebas Neue',sans-serif;--fb:'DM Sans',sans-serif;--fm:'JetBrains Mono',monospace;
+  --r:4px;--tr:0.3s cubic-bezier(0.4,0,0.2,1);
+  --glow:0 0 30px rgba(0,200,255,0.15);--glow-a:0 0 30px rgba(255,184,0,0.2);
+}
+[data-theme="light"]{
+  --bg:#f4f7fb;--bg2:#edf1f7;--bg3:#e6ecf4;--surface:#fff;--surface2:#f0f4f9;
+  --border:rgba(0,140,200,0.15);--border2:rgba(0,140,200,0.3);
+  --cyan:#0077aa;--cyan2:#0099cc;--amber:#cc8800;--white:#0d1219;
+  --muted:#8899aa;--muted2:#667788;--text:#1e2d3d;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+::selection{background:var(--cyan);color:var(--bg)}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:2px}
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;
+  background-image:linear-gradient(rgba(0,200,255,0.03)1px,transparent 1px),linear-gradient(90deg,rgba(0,200,255,0.03)1px,transparent 1px);
+  background-size:50px 50px;pointer-events:none;
+}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+section{position:relative;z-index:1}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,12,16,0.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+[data-theme="light"] nav{background:rgba(244,247,251,0.88)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:60px;max-width:1200px;margin:0 auto}
+.nav-logo{font-family:var(--fd);font-size:1.5rem;letter-spacing:2px;color:var(--cyan);text-decoration:none}
+.nav-logo span{color:var(--amber)}
+.nav-links{display:flex;gap:.25rem;list-style:none}
+.nav-links a{font-family:var(--fm);font-size:.7rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);text-decoration:none;padding:.4rem .75rem;border-radius:var(--r);transition:color var(--tr),background var(--tr)}
+.nav-links a:hover{color:var(--cyan);background:rgba(0,200,255,0.08)}
+.nav-right{display:flex;gap:.75rem;align-items:center}
+#theme-toggle{background:var(--surface);border:1px solid var(--border);color:var(--muted2);width:36px;height:36px;border-radius:var(--r);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all var(--tr)}
+#theme-toggle:hover{border-color:var(--cyan);color:var(--cyan)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--muted2);border-radius:2px;transition:all var(--tr)}
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;z-index:99;background:var(--bg2);border-bottom:1px solid var(--border);padding:1rem 2rem;flex-direction:column;gap:.25rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--fm);font-size:.75rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);text-decoration:none;padding:.6rem .5rem;border-bottom:1px solid var(--border);transition:color var(--tr)}
+.mobile-menu a:hover{color:var(--cyan)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:100px 0 60px;position:relative;overflow:hidden}
+.hero-bg-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+.orb1{width:500px;height:500px;background:radial-gradient(circle,rgba(0,200,255,0.08),transparent 70%);top:-100px;right:-100px;animation:orbFloat 8s ease-in-out infinite}
+.orb2{width:400px;height:400px;background:radial-gradient(circle,rgba(255,184,0,0.06),transparent 70%);bottom:0;left:-100px;animation:orbFloat 10s ease-in-out infinite reverse}
+@keyframes orbFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.05)}}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,200,255,0.08);border:1px solid var(--border2);border-radius:100px;padding:.35rem 1rem;font-family:var(--fm);font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:1.5rem;animation:fadeUp .6s ease both}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+.hero-name{font-family:var(--fd);font-size:clamp(4rem,9vw,7rem);line-height:.9;letter-spacing:3px;color:var(--white);animation:fadeUp .6s .1s ease both}
+.hero-name .line2{color:var(--cyan);display:block}
+.hero-headline{font-family:var(--fm);font-size:clamp(.75rem,1.5vw,.9rem);letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin:1rem 0 1.5rem;animation:fadeUp .6s .2s ease both;min-height:1.2em}
+.hero-desc{font-size:1.05rem;color:var(--muted2);line-height:1.8;max-width:480px;animation:fadeUp .6s .3s ease both}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.5rem;animation:fadeUp .6s .4s ease both}
+.btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--cyan);color:var(--bg);font-family:var(--fm);font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;padding:.75rem 1.75rem;border-radius:var(--r);text-decoration:none;transition:all var(--tr);box-shadow:var(--glow)}
+.btn-primary:hover{background:var(--cyan2);transform:translateY(-2px);box-shadow:0 0 40px rgba(0,200,255,0.3)}
+.btn-secondary{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--border2);color:var(--cyan);font-family:var(--fm);font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;padding:.75rem 1.75rem;border-radius:var(--r);text-decoration:none;transition:all var(--tr);background:transparent}
+.btn-secondary:hover{background:rgba(0,200,255,0.08);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:2rem;margin-top:3rem;animation:fadeUp .6s .5s ease both}
+.stat{border-left:2px solid var(--amber);padding-left:1rem}
+.stat-num{font-family:var(--fd);font-size:2rem;color:var(--white);line-height:1}
+.stat-label{font-size:.7rem;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-top:.25rem}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* HERO PHOTO */
+.hero-visual{display:flex;justify-content:center;align-items:center;animation:fadeUp .6s .3s ease both}
+.hero-photo-card{width:300px;border-radius:12px;overflow:hidden;border:1px solid var(--border2);box-shadow:var(--glow),0 20px 60px rgba(0,0,0,0.4);position:relative}
+.hero-photo-card img{width:100%;display:block;object-fit:cover;object-position:top center}
+.hero-photo-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(8,12,16,0.92));padding:1.5rem 1.25rem 1.25rem}
+.hero-photo-name{font-family:var(--fd);font-size:1.3rem;color:var(--white);letter-spacing:2px}
+.hero-photo-role{font-family:var(--fm);font-size:.58rem;color:var(--cyan);letter-spacing:1.5px;text-transform:uppercase;margin-top:.25rem}
+.corner{position:absolute;width:16px;height:16px}
+.corner-tl{top:8px;left:8px;border-top:2px solid var(--cyan);border-left:2px solid var(--cyan)}
+.corner-tr{top:8px;right:8px;border-top:2px solid var(--cyan);border-right:2px solid var(--cyan)}
+.corner-bl{bottom:8px;left:8px;border-bottom:2px solid var(--cyan);border-left:2px solid var(--cyan)}
+.corner-br{bottom:8px;right:8px;border-bottom:2px solid var(--cyan);border-right:2px solid var(--cyan)}
+
+/* SECTIONS */
+.section{padding:100px 0}
+.section-alt{background:var(--bg2)}
+.section-header{margin-bottom:4rem}
+.section-tag{font-family:var(--fm);font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem}
+.section-tag::before{content:'';display:block;width:30px;height:1px;background:var(--cyan)}
+.section-title{font-family:var(--fd);font-size:clamp(2.5rem,5vw,4rem);color:var(--white);line-height:1;letter-spacing:2px}
+.section-title span{color:var(--cyan)}
+.section-sub{color:var(--muted2);max-width:540px;margin-top:1rem;line-height:1.8}
+.reveal{opacity:1;transform:translateY(0);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.about-text p{color:var(--muted2);line-height:1.9;margin-bottom:1.25rem}
+.about-text p strong{color:var(--white)}
+.mission-card{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--amber);border-radius:var(--r);padding:1.5rem;margin-top:2rem}
+.mission-label{font-family:var(--fm);font-size:.65rem;color:var(--amber);letter-spacing:2px;text-transform:uppercase;margin-bottom:.5rem}
+.mission-text{color:var(--muted2);font-size:.95rem;line-height:1.7;font-style:italic}
+.about-details{display:flex;flex-direction:column;gap:1rem}
+.detail-row{display:flex;align-items:flex-start;gap:1rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1rem 1.25rem;transition:border-color var(--tr)}
+.detail-row:hover{border-color:var(--border2)}
+.detail-icon{width:36px;height:36px;border-radius:var(--r);background:rgba(0,200,255,0.1);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.detail-label{font-family:var(--fm);font-size:.6rem;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
+.detail-value{font-size:.9rem;color:var(--text);margin-top:.15rem}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.75rem;transition:all var(--tr);position:relative;overflow:hidden}
+.skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--border);transition:background var(--tr)}
+.skill-card:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:var(--glow)}
+.skill-card:hover::before{background:linear-gradient(90deg,var(--cyan),transparent)}
+.skill-card-icon{font-size:1.5rem;margin-bottom:1rem}
+.skill-card-title{font-family:var(--fd);font-size:1.1rem;letter-spacing:1.5px;color:var(--white);margin-bottom:1rem}
+.skill-item{margin-bottom:.75rem}
+.skill-item-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.3rem}
+.skill-name{font-size:.8rem;color:var(--muted2)}
+.skill-pct{font-family:var(--fm);font-size:.65rem;color:var(--cyan)}
+.skill-bar{height:2px;background:var(--border);border-radius:1px;overflow:hidden}
+.skill-bar-fill{height:100%;border-radius:1px;background:linear-gradient(90deg,var(--cyan),var(--amber));width:var(--w,0);transition:width 1s ease}
+
+/* PROJECTS */
+.projects-filter{display:flex;gap:.5rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.filter-btn{font-family:var(--fm);font-size:.65rem;letter-spacing:1.5px;text-transform:uppercase;padding:.4rem 1rem;border-radius:var(--r);border:1px solid var(--border);background:transparent;color:var(--muted2);cursor:pointer;transition:all var(--tr)}
+.filter-btn:hover,.filter-btn.active{border-color:var(--cyan);color:var(--cyan);background:rgba(0,200,255,0.08)}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.project-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all var(--tr)}
+.project-card:hover{border-color:var(--border2);transform:translateY(-6px);box-shadow:var(--glow)}
+.project-img{height:160px;background:var(--bg3);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.project-emoji{font-size:3rem;position:relative;z-index:1}
+.project-img-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,200,255,0.04)1px,transparent 1px),linear-gradient(90deg,rgba(0,200,255,0.04)1px,transparent 1px);background-size:15px 15px}
+.project-body{padding:1.25rem}
+.project-type{font-family:var(--fm);font-size:.6rem;color:var(--cyan);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.4rem}
+.project-title{font-family:var(--fd);font-size:1rem;letter-spacing:1px;color:var(--white);margin-bottom:.4rem;line-height:1.2}
+.project-desc{font-size:.82rem;color:var(--muted2);line-height:1.7}
+.project-footer{padding:.75rem 1.25rem;border-top:1px solid var(--border);display:flex;gap:.4rem;flex-wrap:wrap}
+.project-tag{font-family:var(--fm);font-size:.58rem;padding:.15rem .5rem;border:1px solid var(--border2);border-radius:2px;color:var(--muted2)}
+
+/* ACHIEVEMENTS */
+.achievements-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.achievement-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:2rem;display:flex;gap:1.5rem;align-items:flex-start;transition:all var(--tr)}
+.achievement-card:hover{border-color:var(--border2);box-shadow:var(--glow-a)}
+.achievement-icon{width:56px;height:56px;border-radius:50%;background:rgba(255,184,0,0.1);border:1px solid rgba(255,184,0,0.25);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+.achievement-year{font-family:var(--fm);font-size:.6rem;color:var(--amber);letter-spacing:2px;text-transform:uppercase;margin-bottom:.4rem}
+.achievement-title{font-family:var(--fd);font-size:1.1rem;color:var(--white);letter-spacing:1px;margin-bottom:.4rem}
+.achievement-desc{font-size:.82rem;color:var(--muted2);line-height:1.7}
+
+/* STARTUP */
+.startup-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.startup-logo{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem}
+.mft-logo-img{width:56px;height:56px;border-radius:8px;overflow:hidden;background:var(--surface);display:flex;align-items:center;justify-content:center}
+.mft-logo-img img{width:100%;height:100%;object-fit:contain}
+.startup-name{font-family:var(--fd);font-size:1.75rem;letter-spacing:2px;color:var(--white)}
+.startup-tagline{font-family:var(--fm);font-size:.65rem;color:var(--cyan);letter-spacing:1.5px;text-transform:uppercase}
+.startup-text p{color:var(--muted2);line-height:1.9;margin-bottom:1rem}
+.startup-pillars{display:flex;flex-direction:column;gap:1rem}
+.pillar{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--cyan);border-radius:var(--r);padding:1.25rem 1.5rem}
+.pillar-title{font-family:var(--fm);font-size:.7rem;color:var(--cyan);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.4rem}
+.pillar-text{font-size:.85rem;color:var(--muted2);line-height:1.7}
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+.service-item{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:1rem;text-align:center}
+.service-icon{font-size:1.25rem;margin-bottom:.4rem}
+.service-name{font-size:.78rem;color:var(--muted2)}
+
+/* CERTIFICATIONS */
+.certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.cert-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;transition:all var(--tr)}
+.cert-card:hover{border-color:var(--border2);transform:translateY(-3px)}
+.cert-icon{font-size:1.25rem;margin-bottom:.75rem}
+.cert-title{font-size:.88rem;color:var(--white);font-weight:500;margin-bottom:.25rem;line-height:1.3}
+.cert-org{font-family:var(--fm);font-size:.6rem;color:var(--cyan);letter-spacing:.8px}
+.cert-year{font-family:var(--fm);font-size:.6rem;color:var(--muted);margin-top:.3rem}
+
+/* CONTACT */
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
+.contact-info{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+.contact-item{display:flex;align-items:center;gap:1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem 1.5rem;text-decoration:none;transition:all var(--tr)}
+.contact-item:hover{border-color:var(--cyan);transform:translateX(6px)}
+.contact-item-icon{width:40px;height:40px;border-radius:var(--r);background:rgba(0,200,255,0.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.contact-item-label{font-family:var(--fm);font-size:.6rem;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
+.contact-item-value{font-size:.9rem;color:var(--text);margin-top:.15rem}
+.contact-form{display:flex;flex-direction:column;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:.4rem}
+.form-label{font-family:var(--fm);font-size:.65rem;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
+.form-input,.form-textarea{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:.75rem 1rem;color:var(--text);font-family:var(--fb);font-size:.9rem;transition:border-color var(--tr);outline:none;resize:none}
+.form-input:focus,.form-textarea:focus{border-color:var(--cyan)}
+.form-textarea{height:120px}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem 0;text-align:center}
+.footer-text{font-family:var(--fm);font-size:.65rem;color:var(--muted);letter-spacing:1px}
+.footer-text span{color:var(--cyan)}
+
+/* SCROLL TOP */
+#scroll-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);color:var(--cyan);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.1rem;opacity:0;pointer-events:none;transition:all var(--tr);z-index:90}
+#scroll-top.visible{opacity:1;pointer-events:all}
+#scroll-top:hover{background:rgba(0,200,255,0.12)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-grid,.about-grid,.startup-layout,.contact-layout{grid-template-columns:1fr;gap:3rem}
+  .hero-visual{order:-1}
+  .projects-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .projects-grid,.achievements-grid,.certs-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr}
+  .section{padding:70px 0}
+  .services-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .container{padding:0 1.25rem}
+  .hero-cta{flex-direction:column}
+  .btn-primary,.btn-secondary{justify-content:center}
+}
+</style>
+<meta property="og:title" content="Kavisaran K — Engineer · Founder · Innovator"/>
+<meta property="og:description" content="Mechanical Engineering student, Founder &amp; CEO of MechFlow Technology, SDG Hackathon Winner from Salem, Tamil Nadu."/>
+<meta property="og:type" content="website"/>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">KK<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#startup">MechFlow</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button id="theme-toggle">☀</button>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#skills" onclick="closeMenu()">Skills</a>
+  <a href="#projects" onclick="closeMenu()">Projects</a>
+  <a href="#achievements" onclick="closeMenu()">Achievements</a>
+  <a href="#startup" onclick="closeMenu()">MechFlow</a>
+  <a href="#certifications" onclick="closeMenu()">Certifications</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg-orb orb1"></div>
+  <div class="hero-bg-orb orb2"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge"><div class="badge-dot"></div>Available for Projects &amp; Collaborations</div>
+        <h1 class="hero-name">Kavisaran<span class="line2">K</span></h1>
+        <p class="hero-headline" id="typewriter">Engineer &middot; Founder &middot; Innovator</p>
+        <p class="hero-desc">Mechanical Engineering undergraduate building the future through <strong>MechFlow Technology</strong>. SDG'25 Winner, MSME-registered startup founder, and competition-tested innovator turning complex problems into elegant engineering solutions.</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary">&#8599; View Projects</a>
+          <a href="#contact" class="btn-secondary">&rarr; Contact Me</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Competitions</div></div>
+          <div class="stat"><div class="stat-num">1</div><div class="stat-label">Startup Founded</div></div>
+          <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Certificates</div></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-photo-card">
+          <div class="corner corner-tl"></div><div class="corner corner-tr"></div>
+          <div class="corner corner-bl"></div><div class="corner corner-br"></div>
+          <img src="data:image/jpeg;base64,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" alt="Kavisaran K"/>
+          <div class="hero-photo-overlay">
+            <div class="hero-photo-name">KAVISARAN K</div>
+            <div class="hero-photo-role">Founder &amp; CEO &middot; MechFlow Technology</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section section-alt" id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">01 / About Me</div>
+      <h2 class="section-title">Driven by <span>Purpose</span>, Built by <span>Design</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm <strong>Kavisaran K</strong>, a 2nd-year Mechanical Engineering undergraduate at Dhirajlal Gandhi College of Technology, Salem — and I don't just study engineering, I <strong>live it</strong> through startups, competitions, and real-world innovation.</p>
+        <p>As the <strong>Founder &amp; CEO of MechFlow Technology (MFT)</strong> — a Government of India MSME-registered company (UDYAM-TN-20-0172805) — I lead a team dedicated to building smart, sustainable mechanical systems. My work sits at the intersection of engineering precision, design thinking, and entrepreneurial ambition.</p>
+        <p>Whether competing at ISRO National Space Day, winning the SDG'25 Hackathon, running marathons, or consulting on engineering projects, I bring one mindset: <strong>precision, leadership, and relentless drive.</strong></p>
+        <div class="mission-card">
+          <div class="mission-label">// Mission Statement</div>
+          <p class="mission-text">"To engineer systems that matter — building a future where mechanical innovation, sustainability, and human ingenuity converge to solve the world's most pressing challenges."</p>
+        </div>
+      </div>
+      <div class="about-details reveal">
+        <div class="detail-row"><div class="detail-icon">🎓</div><div><div class="detail-label">Education</div><div class="detail-value">B.E. Mechanical Engineering · 2nd Year · DGCT Salem</div></div></div>
+        <div class="detail-row"><div class="detail-icon">🏢</div><div><div class="detail-label">Startup</div><div class="detail-value">Founder &amp; CEO · MechFlow Technology · UDYAM-TN-20-0172805</div></div></div>
+        <div class="detail-row"><div class="detail-icon">💼</div><div><div class="detail-label">Consulting</div><div class="detail-value">Project &amp; Innovation Consultant</div></div></div>
+        <div class="detail-row"><div class="detail-icon">🏆</div><div><div class="detail-label">Recognition</div><div class="detail-value">SDG'25 Hackathon Winner · Anveshana Karnataka Finalist</div></div></div>
+        <div class="detail-row"><div class="detail-icon">🚀</div><div><div class="detail-label">Science</div><div class="detail-value">ISRO NSpD-2025 Participant &amp; Volunteer</div></div></div>
+        <div class="detail-row"><div class="detail-icon">🏅</div><div><div class="detail-label">Athletics</div><div class="detail-value">Anna University Zonal Tournaments · 10K &amp; Half Marathon · 6+ Marathons Completed</div></div></div>
+        <div class="detail-row"><div class="detail-icon">📍</div><div><div class="detail-label">Location</div><div class="detail-value">Salem, Tamil Nadu · Open to Remote Collaborations</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">02 / Skills</div>
+      <h2 class="section-title">Technical <span>Arsenal</span></h2>
+      <p class="section-sub">A multidisciplinary engineering skill set built through coursework, competitions, hands-on projects, and leadership experience.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">⚙️</div>
+        <div class="skill-card-title">MECHANICAL ENGINEERING</div>
+        <div class="skill-item"><div class="skill-item-top"><span class="skill-name">Thermodynamics &amp; Fluid Mechanics</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-w="80"></div></div></div>
+        <div class="skill-item"><div class="skill-item-top"><span class="skill-name">Machine Design &amp; Analysis</span><span class="skill-pct">75%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-w="75"></div></div></div>
+        <div class="skill-item"><div class="skill-item-top"><span class="skill-name">Manufacturing Processes</span><span class="skill-pct">72%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-w="72"></div></div></div>
+        <div class="skill-item"><div class="skill-item-top"><span class="skill-name">Mechatronics (IIT Roorkee)</span><span class="skill-pct">75%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-w="75"></div></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">💡</div>
+        <div class="skill-card-title">INNOVATION &amp; RESEARCH</div>
+        <div class="skill-item"><div class="skill-item-top"><span class="skill-name">Design Thinking</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-w="90"></div></div></div>
+        <div class="skill-item"><div class="skill-item-top"><span class="skill-name">Six Sigma &amp; Quality</span><span class="skill-pct">78%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-w="78"></div></div></div>
+        <div class="skill-item"><div class="skill-item-top"><span class="skill-name">SDG-Aligned Research</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-w="85"></div></div></div>
+        <div class="skill-item"><div class="skill-item-top"><span class="skill-name">3D Printing &amp; Prototyping</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-w="80"></div></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">🎯</div>
+        <div class="skill-card-title">LEADERSHIP &amp; MANAGEMENT</div>
+        <div class="skill-item"><div class="skill-item-top"><span class="skill-name">Team Leadership</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-w="92"></div></div></div>
+        <div class="skill-item"><div class="skill-item-top"><span class="skill-name">Project Management</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-w="85"></div></div></div>
+        <div class="skill-item"><div class="skill-item-top"><span class="skill-name">Startup Strategy</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-w="82"></div></div></div>
+        <div class="skill-item"><div class="skill-item-top"><span class="skill-name">Content Writing &amp; Communication</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-w="80"></div></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">🔧</div>
+        <div class="skill-card-title">TECHNICAL TOOLS</div>
+        <div class="skill-item"><div class="skill-item-top"><span class="skill-name">AutoCAD / CAD Clash</span><span class="skill-pct">78%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-w="78"></div></div></div>
+        <div class="skill-item"><div class="skill-item-top"><span class="skill-name">Machine Learning Fundamentals</span><span class="skill-pct">65%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-w="65"></div></div></div>
+        <div class="skill-item"><div class="skill-item-top"><span class="skill-name">MS Office Suite</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-w="90"></div></div></div>
+        <div class="skill-item"><div class="skill-item-top"><span class="skill-name">3D Printing (HP LIFE)</span><span class="skill-pct">75%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-w="75"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section section-alt" id="projects">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">03 / Projects &amp; Innovations</div>
+      <h2 class="section-title">Built to <span>Solve</span>, Designed to <span>Scale</span></h2>
+    </div>
+    <div class="projects-filter reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="hackathon">Hackathons</button>
+      <button class="filter-btn" data-filter="engineering">Engineering</button>
+      <button class="filter-btn" data-filter="startup">Startup</button>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal" data-category="hackathon">
+        <div class="project-img"><div class="project-img-bg"></div><div class="project-emoji">🌊</div></div>
+        <div class="project-body">
+          <div class="project-type">SDG Challenge'25 · Winner 🏆</div>
+          <div class="project-title">Remote Controlled Floating Weed &amp; Waste Remover</div>
+          <p class="project-desc">24-hour hackathon winner. Team NextGen Automation built a remote-controlled floating device to remove aquatic weeds and waste — addressing SDG Clean Water goals.</p>
+        </div>
+        <div class="project-footer"><span class="project-tag">SDG</span><span class="project-tag">Water</span><span class="project-tag">Automation</span><span class="project-tag">Winner</span></div>
+      </div>
+      <div class="project-card reveal" data-category="hackathon">
+        <div class="project-img"><div class="project-img-bg"></div><div class="project-emoji">📡</div></div>
+        <div class="project-body">
+          <div class="project-type">Ideation Week 2025 · DGCT IIC</div>
+          <div class="project-title">Multi-User Wireless System</div>
+          <p class="project-desc">Presented Multi-User Wireless project idea at DGCT Ideation Week organised by IIC and IIPC — selected from all first-year mechanical engineering students.</p>
+        </div>
+        <div class="project-footer"><span class="project-tag">Wireless</span><span class="project-tag">IIC</span><span class="project-tag">Innovation</span></div>
+      </div>
+      <div class="project-card reveal" data-category="hackathon">
+        <div class="project-img"><div class="project-img-bg"></div><div class="project-emoji">🤖</div></div>
+        <div class="project-body">
+          <div class="project-type">Smart Motion Hackathon 2.0 · CIT Chennai</div>
+          <div class="project-title">Smart Motion Engineering Solution</div>
+          <p class="project-desc">Participated in Smart Motion Hackathon 2.0 organised by Chennai Institute of Technology via Unstop platform — competing with teams across Tamil Nadu.</p>
+        </div>
+        <div class="project-footer"><span class="project-tag">Hackathon</span><span class="project-tag">Unstop</span><span class="project-tag">CIT</span></div>
+      </div>
+      <div class="project-card reveal" data-category="engineering">
+        <div class="project-img"><div class="project-img-bg"></div><div class="project-emoji">🔬</div></div>
+        <div class="project-body">
+          <div class="project-type">Anveshana 2025-26 · Agastya Foundation · Bangalore</div>
+          <div class="project-title">Regional Science &amp; Engineering Fair Project</div>
+          <p class="project-desc">Selected to represent DGCT at the Anveshana Regional Level Science &amp; Engineering Fair in Bangalore — supported by Agastya International Foundation &amp; Synopsys.</p>
+        </div>
+        <div class="project-footer"><span class="project-tag">Research</span><span class="project-tag">ISRO</span><span class="project-tag">Agastya</span></div>
+      </div>
+      <div class="project-card reveal" data-category="engineering">
+        <div class="project-img"><div class="project-img-bg"></div><div class="project-emoji">📐</div></div>
+        <div class="project-body">
+          <div class="project-type">VARNAM'26 · Karpagam Institute · National Fest</div>
+          <div class="project-title">CAD Clash — National Level Competition</div>
+          <p class="project-desc">Competed in CAD Clash at VARNAM'26, a National Level Techno &amp; Cultural Fest hosted by Karpagam Institute of Technology (NAAC A++).</p>
+        </div>
+        <div class="project-footer"><span class="project-tag">CAD</span><span class="project-tag">National</span><span class="project-tag">VARNAM</span></div>
+      </div>
+      <div class="project-card reveal" data-category="startup">
+        <div class="project-img"><div class="project-img-bg"></div><div class="project-emoji">🚀</div></div>
+        <div class="project-body">
+          <div class="project-type">Startup · MechFlow Technology · MSME Registered</div>
+          <div class="project-title">MFT — Engineering The Future</div>
+          <p class="project-desc">Founded and leading MechFlow Technology — a Government of India MSME-registered manufacturing company (UDYAM-TN-20-0172805) focused on smart mechanical systems.</p>
+        </div>
+        <div class="project-footer"><span class="project-tag">MSME</span><span class="project-tag">Manufacturing</span><span class="project-tag">Founder</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="section" id="achievements">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">04 / Achievements</div>
+      <h2 class="section-title">Proven Through <span>Competition</span></h2>
+    </div>
+    <div class="achievements-grid">
+      <div class="achievement-card reveal">
+        <div class="achievement-icon">🏆</div>
+        <div class="achievement-info">
+          <div class="achievement-year">2025 · Winner</div>
+          <div class="achievement-title">DGCT SDG Challenge'25 Champion</div>
+          <p class="achievement-desc">Won the 24-Hour Non-Stop SDG Hackathon with Team NextGen Automation. Project: Remote Controlled Floating Weed &amp; Waste Remover. Awarded Certificate of Achievement by DGCT Centre for Innovation &amp; Entrepreneurship.</p>
+        </div>
+      </div>
+      <div class="achievement-card reveal">
+        <div class="achievement-icon">🔬</div>
+        <div class="achievement-info">
+          <div class="achievement-year">2026 · Finalist</div>
+          <div class="achievement-title">Anveshana Karnataka Finalist</div>
+          <p class="achievement-desc">Selected for the Regional Level Science &amp; Engineering Fair in Bangalore, organised by Agastya International Foundation &amp; Synopsys — representing DGCT on 25–26 February 2026.</p>
+        </div>
+      </div>
+      <div class="achievement-card reveal">
+        <div class="achievement-icon">🏃</div>
+        <div class="achievement-info">
+          <div class="achievement-year">2025 · Anna University</div>
+          <div class="achievement-title">Anna University Zonal Athletics</div>
+          <p class="achievement-desc">Represented DGCT at Anna University Zonal Tournaments 2025-26 in both 10,000M and Half Marathon (1:39:31) at Adhiyamaan College of Engineering, Hosur. Also won 1st place (3000M) &amp; 2nd place (1500M) at college Sports Meet.</p>
+        </div>
+      </div>
+      <div class="achievement-card reveal">
+        <div class="achievement-icon">🛰️</div>
+        <div class="achievement-info">
+          <div class="achievement-year">2025 · ISRO</div>
+          <div class="achievement-title">ISRO National Space Day — Participant &amp; Volunteer</div>
+          <p class="achievement-desc">Participated in Quiz/Extempore/Working Model competitions and volunteered for National Space Day 2025 celebrations organised by Satish Dhawan Space Centre SHAR, ISRO at DGCT, Salem.</p>
+        </div>
+      </div>
+      <div class="achievement-card reveal">
+        <div class="achievement-icon">🏢</div>
+        <div class="achievement-info">
+          <div class="achievement-year">2025 · MSME Govt. of India</div>
+          <div class="achievement-title">MSME Registered Founder — MechFlow Technology</div>
+          <p class="achievement-desc">Founded MechFlow Technology and obtained official UDYAM Registration (UDYAM-TN-20-0172805) from the Ministry of Micro, Small &amp; Medium Enterprises, Government of India — at just 19 years old.</p>
+        </div>
+      </div>
+      <div class="achievement-card reveal">
+        <div class="achievement-icon">🎖️</div>
+        <div class="achievement-info">
+          <div class="achievement-year">2025 · DGCT</div>
+          <div class="achievement-title">Achiever's Day — Best Extracurricular (×2 Awards)</div>
+          <p class="achievement-desc">Received double Certificate of Appreciation at DGCT Achiever's Day 2025 for Best Extra Curricular / Co-curricular / NSS / BIS activities during academic year 2024-25.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STARTUP -->
+<section class="section section-alt" id="startup">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">05 / Entrepreneurship</div>
+      <h2 class="section-title">Building <span>MechFlow</span></h2>
+    </div>
+    <div class="startup-layout">
+      <div class="startup-text reveal">
+        <div class="startup-logo">
+          <div class="mft-logo-img"><img src="data:image/jpeg;base64,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" alt="MFT Logo"/></div>
+          <div>
+            <div class="startup-name">MECHFLOW TECHNOLOGY</div>
+            <div class="startup-tagline">MFT &mdash; Engineering The Future</div>
+          </div>
+        </div>
+        <p>MechFlow Technology is my flagship venture — a <strong>Government of India MSME-registered</strong> engineering startup (UDYAM-TN-20-0172805) focused on building smart, scalable mechanical systems for real-world impact.</p>
+        <p>Under the MFT manufacturing initiative, we develop intelligent mechanical solutions integrating modern engineering with practical execution — targeting both industrial and sustainable applications.</p>
+        <p>As <strong>Founder &amp; CEO</strong>, I drive the vision, build the team, and consult across engineering and innovation ecosystems — positioning MechFlow as a platform for next-generation engineering talent.</p>
+        <div class="services-grid">
+          <div class="service-item"><div class="service-icon">⚙️</div><div class="service-name">Smart System Design</div></div>
+          <div class="service-item"><div class="service-icon">🔁</div><div class="service-name">Process Innovation</div></div>
+          <div class="service-item"><div class="service-icon">🧪</div><div class="service-name">R&amp;D Consulting</div></div>
+          <div class="service-item"><div class="service-icon">📐</div><div class="service-name">Engineering Design</div></div>
+        </div>
+      </div>
+      <div class="startup-pillars reveal">
+        <div class="pillar"><div class="pillar-title">// Mission</div><p class="pillar-text">To engineer smart mechanical systems that are sustainable, scalable, and solve real challenges faced by industries and communities — bridging the gap between innovation and implementation.</p></div>
+        <div class="pillar"><div class="pillar-title">// Vision</div><p class="pillar-text">To become a leading student-founded engineering technology company, recognised for pioneering intelligent mechanical systems and nurturing the next generation of engineering entrepreneurs.</p></div>
+        <div class="pillar"><div class="pillar-title">// Registration</div><p class="pillar-text">UDYAM-TN-20-0172805 · Ministry of MSME, Govt. of India · Type: Micro Enterprise · Major Activity: Manufacturing · Registered: 24 February 2025 · Address: Thumbipadi, Kadayampatti, Salem 636305.</p></div>
+        <div class="pillar" style="border-left-color:var(--amber)"><div class="pillar-title" style="color:var(--amber)">// Open To</div><p class="pillar-text">Collaboration with engineers, investors, researchers, and industry partners who share a passion for practical innovation and sustainable engineering. Open to partnerships, mentorship, and co-creation opportunities.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="section" id="certifications">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">06 / Certifications &amp; Achievements</div>
+      <h2 class="section-title">37+ Verified <span>Credentials</span></h2>
+      <p class="section-sub">Every certificate earned through real competition, innovation, and community service.</p>
+      <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1.5rem;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--amber);display:flex;align-items:center;gap:.4rem;"><span style="width:12px;height:2px;background:var(--amber);display:inline-block"></span>Sports</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--cyan);display:flex;align-items:center;gap:.4rem;"><span style="width:12px;height:2px;background:var(--cyan);display:inline-block"></span>Innovation</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:.65rem;color:#00cc88;display:flex;align-items:center;gap:.4rem;"><span style="width:12px;height:2px;background:#00cc88;display:inline-block"></span>Online Courses</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:.65rem;color:#aa88ff;display:flex;align-items:center;gap:.4rem;"><span style="width:12px;height:2px;background:#aa88ff;display:inline-block"></span>Academic</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:.65rem;color:#ff8844;display:flex;align-items:center;gap:.4rem;"><span style="width:12px;height:2px;background:#ff8844;display:inline-block"></span>Social</span>
+      </div>
+    </div>
+    <div class="certs-grid">
+      <!-- INNOVATION -->
+      <div class="cert-card reveal" style="border-top:2px solid var(--cyan)"><div class="cert-icon">🏆</div><div class="cert-title">DGCT SDG Challenge'25 — Certificate of Achievement (Winner)</div><div class="cert-org">Team NextGen Automation · Remote Controlled Floating Weed &amp; Waste Remover · DGCT</div><div class="cert-year">3–4 Nov 2025</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid var(--cyan)"><div class="cert-icon">💡</div><div class="cert-title">DGCT SDG Challenge'25 — Certificate of Participation</div><div class="cert-org">Team NextGen Automation · Remote Controlled Floating Weed &amp; Waste Remover · DGCT Centre for Innovation &amp; Entrepreneurship</div><div class="cert-year">3–4 Nov 2025</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid var(--amber)"><div class="cert-icon">🥇</div><div class="cert-title">Certificate of Merit — Kho Kho (Men) · 1st Place</div><div class="cert-org">Dhiraj Sports Club · DGCT Annual Sports Meet · DGCT Salem</div><div class="cert-year">11 Apr 2025</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid var(--cyan)"><div class="cert-icon">💡</div><div class="cert-title">Ideation Week 2025 — Multi-User Wireless Project</div><div class="cert-org">IIC &amp; IIPC · Dhirajlal Gandhi College of Technology</div><div class="cert-year">3–8 Feb 2025</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid var(--cyan)"><div class="cert-icon">⚙️</div><div class="cert-title">MEKCHAT 25.0 — Industry 4.0 Workshop</div><div class="cert-org">Society of Mechanical Engineers · Govt. College of Engineering Salem · National Symposium</div><div class="cert-year">3–4 Mar 2025</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid var(--cyan)"><div class="cert-icon">🔬</div><div class="cert-title">Anveshana 2025-26 — Regional Science &amp; Engineering Fair</div><div class="cert-org">Agastya International Foundation &amp; Synopsys · Bangalore</div><div class="cert-year">25–26 Feb 2026</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid var(--cyan)"><div class="cert-icon">💻</div><div class="cert-title">Smart Motion Hackathon 2.0</div><div class="cert-org">Unstop · Chennai Institute of Technology (CIT)</div><div class="cert-year">2025–26</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid var(--cyan)"><div class="cert-icon">📐</div><div class="cert-title">CAD Clash — VARNAM'26 National Fest</div><div class="cert-org">Karpagam Institute of Technology · NAAC A++ · National Level Techno Fest</div><div class="cert-year">3–7 Feb 2026</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid var(--cyan)"><div class="cert-icon">🔩</div><div class="cert-title">Precision Tool Quest — VARNAM'26 National Fest</div><div class="cert-org">Karpagam Institute of Technology · NAAC A++ · National Level Sports, Techno &amp; Cultural Fest</div><div class="cert-year">3–7 Feb 2026</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid var(--cyan)"><div class="cert-icon">🛠️</div><div class="cert-title">Mech Craft Workshop — VARNAM'26 National Fest</div><div class="cert-org">Karpagam Institute of Technology · NAAC A++ · National Level Sports, Techno &amp; Cultural Fest</div><div class="cert-year">3–7 Feb 2026</div></div>
+      <!-- ISRO -->
+      <div class="cert-card reveal" style="border-top:2px solid var(--cyan)"><div class="cert-icon">🚀</div><div class="cert-title">ISRO National Space Day 2025 — Participant</div><div class="cert-org">Satish Dhawan Space Centre SHAR · Quiz / Extempore / Working Model · DGCT Salem</div><div class="cert-year">11–12 Aug 2025</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid var(--cyan)"><div class="cert-icon">🛰️</div><div class="cert-title">ISRO National Space Day 2025 — Volunteer</div><div class="cert-org">Satish Dhawan Space Centre SHAR, ISRO · NSpD-2025 · DGCT Salem</div><div class="cert-year">11–12 Aug 2025</div></div>
+      <!-- STARTUP -->
+      <div class="cert-card reveal" style="border-top:2px solid #00cc88"><div class="cert-icon">🏢</div><div class="cert-title">UDYAM Registration — MechFlow Technology</div><div class="cert-org">Ministry of MSME, Govt. of India · UDYAM-TN-20-0172805 · Manufacturing · Micro Enterprise</div><div class="cert-year">Registered 24 Feb 2025</div></div>
+      <!-- ONLINE COURSES -->
+      <div class="cert-card reveal" style="border-top:2px solid #00cc88"><div class="cert-icon">📊</div><div class="cert-title">Introduction to Six Sigma</div><div class="cert-org">Simplilearn SkillUp · Cert Code: 9701354</div><div class="cert-year">10 Jan 2026</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid #00cc88"><div class="cert-icon">🤖</div><div class="cert-title">Mechatronics by IIT Roorkee — 23 Hours</div><div class="cert-org">Cursa Learning Platform · Cert ID: u7556326</div><div class="cert-year">11–13 Jan 2026</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid #00cc88"><div class="cert-icon">🖨️</div><div class="cert-title">3D Printing — HP LIFE Online Course</div><div class="cert-org">HP LIFE / HP Foundation · Deputy Director: Stephanie Bormann</div><div class="cert-year">31 Jul 2025</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid #00cc88"><div class="cert-icon">🧠</div><div class="cert-title">Introduction to Machine Learning</div><div class="cert-org">Great Learning Academy</div><div class="cert-year">July 2021</div></div>
+      <!-- INTERNSHIP -->
+      <div class="cert-card reveal" style="border-top:2px solid #aa88ff"><div class="cert-icon">✍️</div><div class="cert-title">Content Writing Internship — Selection Certificate</div><div class="cert-org">Internshala · InAmigos Foundation · Cert No: 4kbxgb0cw3t</div><div class="cert-year">21 May 2025</div></div>
+      <!-- ACADEMIC -->
+      <div class="cert-card reveal" style="border-top:2px solid #aa88ff"><div class="cert-icon">🎖️</div><div class="cert-title">Achiever's Day — Best Extracurricular/NSS/BIS (×2)</div><div class="cert-org">DGCT · 1st Year Mechanical Engineering · Academic Year 2024-25</div><div class="cert-year">2025</div></div>
+      <!-- SPORTS -->
+      <div class="cert-card reveal" style="border-top:2px solid var(--amber)"><div class="cert-icon">🥇</div><div class="cert-title">Certificate of Merit — 3000M Men · 1st Place</div><div class="cert-org">Dhiraj Sports Club · DGCT Annual Sports Meet</div><div class="cert-year">11 Apr 2025</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid var(--amber)"><div class="cert-icon">🥈</div><div class="cert-title">Certificate of Merit — 1500M Men · 2nd Place</div><div class="cert-org">Dhiraj Sports Club · DGCT Annual Sports Meet</div><div class="cert-year">11 Apr 2025</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid var(--amber)"><div class="cert-icon">🏃</div><div class="cert-title">Anna University Zonal — 10,000M Athletics</div><div class="cert-org">Anna University Sports Board · Zone VII · Adhiyamaan College of Engineering, Hosur</div><div class="cert-year">31 Oct – 1 Nov 2025</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid var(--amber)"><div class="cert-icon">🏃</div><div class="cert-title">Anna University Zonal — Half Marathon (1:39:31)</div><div class="cert-org">Anna University Sports Board · Zone VII · Adhiyamaan College of Engineering, Hosur</div><div class="cert-year">31 Oct – 1 Nov 2025</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid var(--amber)"><div class="cert-icon">🏅</div><div class="cert-title">Marathon "Run for Drug Free Society" — 7 KM (35:50)</div><div class="cert-org">Central Law College &amp; Central Learning Campus Salem · Bib No: 7173 · Mr. D. Saravanan, Chairman</div><div class="cert-year">23 Mar 2025</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid var(--amber)"><div class="cert-icon">🏅</div><div class="cert-title">World Sports Day Fitness Marathon — 12 KM</div><div class="cert-org">KMDK &amp; Namakkal District Athletic Association · Rasipuram</div><div class="cert-year">6 Apr 2025</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid var(--amber)"><div class="cert-icon">🏅</div><div class="cert-title">Sankagiri Marathon 2025 — Certificate of Finisher</div><div class="cert-org">Sre VidyaSaagar Matric Hr. Sec. School · DTE Sponsored · Sankagiri</div><div class="cert-year">27 Jul 2025</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid var(--amber)"><div class="cert-icon">🏅</div><div class="cert-title">Kauvery Marathon Salem — 5 KM</div><div class="cert-org">Kauvery Hospital Salem</div><div class="cert-year">29 Sep 2024</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid var(--amber)"><div class="cert-icon">🏅</div><div class="cert-title">Agni Marathon — 12 KM Participant</div><div class="cert-org">Agni Marathon · Kolathur, Mettur Tk., Salem Dt.</div><div class="cert-year">18 Jan 2025</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid var(--amber)"><div class="cert-icon">🏅</div><div class="cert-title">Social Justice Marathon 2024 — 10 KM</div><div class="cert-org">Vazhapadi Sports Association &amp; Salem District Athletic Association</div><div class="cert-year">24 Nov 2024</div></div>
+      <!-- SOCIAL -->
+      <div class="cert-card reveal" style="border-top:2px solid #ff8844"><div class="cert-icon">🌿</div><div class="cert-title">Har Ghar Tiranga — Certificate of Appreciation</div><div class="cert-org">Ministry of Culture, Government of India</div><div class="cert-year">2–15 Aug 2025</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid #ff8844"><div class="cert-icon">🚫</div><div class="cert-title">Pledge Against Drug Abuse Campaign</div><div class="cert-org">Drug Free Tamil Nadu · Mission Management Unit · Govt. of Tamil Nadu</div><div class="cert-year">8 Aug 2025</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid #ff8844"><div class="cert-icon">🧘</div><div class="cert-title">International Day of Yoga 2025</div><div class="cert-org">Dhirajlal Gandhi College of Technology · "Yoga for One Earth, One Health"</div><div class="cert-year">21 Jun 2025</div></div>
+      <div class="cert-card reveal" style="border-top:2px solid #ff8844"><div class="cert-icon">✊</div><div class="cert-title">Youth Against Addiction Workshop</div><div class="cert-org">Tamilnadu AICUF · Salem Zone · St. Joseph's College for Women, Pagalpatti</div><div class="cert-year">22 Jan 2025</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section-alt" id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">07 / Contact</div>
+      <h2 class="section-title">Let's <span>Build</span> Something Great</h2>
+      <p class="section-sub">Whether you want to collaborate on engineering projects, discuss startup ideas, or explore innovation consulting — I'd love to connect.</p>
+    </div>
+    <div class="contact-layout">
+      <div class="reveal">
+        <div class="contact-info">
+          <a href="tel:+916383903690" class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div><div class="contact-item-label">Phone</div><div class="contact-item-value">+91 63839 03690</div></div>
+          </a>
+          <a href="mailto:kavisaran595@gmail.com" class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div><div class="contact-item-label">Email</div><div class="contact-item-value"><span class="__cf_email__" data-cfemail="5b303a2d32283a293a356e626e1b3c363a323775383436">[email&#160;protected]</span></div></div>
+          </a>
+          <a href="https://www.linkedin.com/in/kavisarank" target="_blank" class="contact-item">
+            <div class="contact-item-icon">💼</div>
+            <div><div class="contact-item-label">LinkedIn</div><div class="contact-item-value">linkedin.com/in/kavisarank</div></div>
+          </a>
+          <a href="#" class="contact-item">
+            <div class="contact-item-icon">🏢</div>
+            <div><div class="contact-item-label">Company</div><div class="contact-item-value">MechFlow Technology · UDYAM-TN-20-0172805</div></div>
+          </a>
+          <a href="#" class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div><div class="contact-item-label">Location</div><div class="contact-item-value">Salem, Tamil Nadu · Open to Remote Collaboration</div></div>
+          </a>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="contact-form">
+          <div class="form-group"><label class="form-label">Name</label><input type="text" class="form-input" placeholder="Your name"/></div>
+          <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" placeholder="your@email.com"/></div>
+          <div class="form-group"><label class="form-label">Subject</label><input type="text" class="form-input" placeholder="Collaboration / Project / Consulting"/></div>
+          <div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea" placeholder="Tell me about your project or idea..."></textarea></div>
+          <button class="btn-primary" style="border:none;cursor:pointer;width:100%;justify-content:center" onclick="handleSend(this)">&rarr; Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p class="footer-text">&copy; 2025 <span>Kavisaran K</span> &middot; MechFlow Technology &middot; Salem, Tamil Nadu &middot; <a href="https://www.linkedin.com/in/kavisarank" target="_blank" style="color:var(--cyan);text-decoration:none">LinkedIn</a></p>
+  </div>
+</footer>
+
+<button id="scroll-top">&uarr;</button>
+
+<script>
+// Theme
+const html=document.documentElement,tb=document.getElementById('theme-toggle');
+let dark=true;
+tb.addEventListener('click',()=>{dark=!dark;html.setAttribute('data-theme',dark?'dark':'light');tb.textContent=dark?'☀':'☾'});
+
+// Hamburger
+document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobile-menu').classList.toggle('open'));
+function closeMenu(){document.getElementById('mobile-menu').classList.remove('open')}
+
+// Reveal
+const revObs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*60)})},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+
+// Skill bars
+const barObs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.width=e.target.dataset.w+'%';barObs.unobserve(e.target)}})},{threshold:.3});
+document.querySelectorAll('.skill-bar-fill').forEach(b=>barObs.observe(b));
+
+// Filter
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.project-card').forEach(c=>{
+      c.style.opacity=(f==='all'||c.dataset.category===f)?'1':'0.2';
+      c.style.transform=(f==='all'||c.dataset.category===f)?'':'scale(0.97)';
+    });
+  });
+});
+
+// Scroll top
+const st=document.getElementById('scroll-top');
+window.addEventListener('scroll',()=>st.classList.toggle('visible',scrollY>400));
+st.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+// Typewriter
+const tw=document.getElementById('typewriter');
+const roles=["Engineer · Founder · Innovator","SDG'25 Winner · Startup CEO","Project & Innovation Consultant","Anna University Athlete · Gold"];
+let ri=0,ci=0,del=false;
+function type(){
+  const cur=roles[ri];
+  if(!del&&ci<=cur.length){tw.textContent=cur.slice(0,ci++);setTimeout(type,65)}
+  else if(!del&&ci>cur.length){del=true;setTimeout(type,2000)}
+  else if(del&&ci>0){tw.textContent=cur.slice(0,--ci);setTimeout(type,30)}
+  else{del=false;ri=(ri+1)%roles.length;setTimeout(type,400)}
+}
+setTimeout(type,1200);
+
+// Nav active
+const secObs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.nav-links a').forEach(a=>{a.style.color='';if(a.getAttribute('href')==='#'+e.target.id)a.style.color='var(--cyan)'})}})},{threshold:.4});
+n('section[id]').forEach(s=>secObs.observe(s));
+
+// Form
+function handleSend(btn){btn.textContent='✓ Message Sent!';btn.style.background='#00cc88';setTimeout(()=>{btn.textContent='→ Send Message';btn.style.background=''},3000)}
+</script>
+</body>
+</html>
